@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Push for user {{userId}}</h2>
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field>
+    <input matInput
+           placeholder="Message"
+           formControlName="message">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="close()">Close</button>
+  <button mat-raised-button color="warn"  (click)="save()">Save</button>
+</mat-dialog-actions>

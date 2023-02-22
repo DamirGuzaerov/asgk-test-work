@@ -18,13 +18,10 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   addToken(request: HttpRequest<any>): HttpRequest<any> {
-    console.log(this.authService.token)
     const headers =
       this.authService.token
         ? request.headers.set('Authorization', `${this.authService.token}`)
         : request.headers;
-
-    console.log(headers)
 
     return request.clone({
       headers,

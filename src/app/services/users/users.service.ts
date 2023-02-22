@@ -37,4 +37,11 @@ export class UsersService {
     const token = this.authService.token;
     return this.httpClient.get<IPassesResponse>(`v1/${token}/passes?limit=${limit}&offset=${offset}`)
   }
+
+  sendPushToUserById(userId: number,message: string){
+    const token = this.authService.token;
+    this.httpClient.post(`v1/${token}/message/push`,
+      {"push_message": message,"user_id": userId.toString()})
+      .subscribe(value => console.log(value))
+  }
 }

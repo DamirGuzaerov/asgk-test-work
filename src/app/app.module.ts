@@ -26,13 +26,16 @@ import {AuthGuard} from "./guards/auth/auth.guard";
 import { UsersComponent } from './pages/users/users/users.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import {MatSortModule} from "@angular/material/sort";
+import {MatDialogModule} from "@angular/material/dialog";
+import { UserPushDialogComponent } from './components/dialogs/user-push-dialog/user-push-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UsersComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserPushDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import {MatSortModule} from "@angular/material/sort";
     MatOptionModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

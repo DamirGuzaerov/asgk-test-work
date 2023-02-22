@@ -19,7 +19,6 @@ export class AuthService {
       .post<IAuthResult>('/test-auth-only', {login: login, password: password})
       .subscribe((value) => {
         this.token = value.auth_token
-        console.log(this.token)
         this.setSession(value)
         this.router.navigateByUrl("/")
       })
