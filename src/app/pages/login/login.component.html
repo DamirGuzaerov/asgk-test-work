@@ -4,11 +4,17 @@
       <form [formGroup]="form">
         <h2>Log In</h2>
         <mat-form-field class="w-100">
-          <input matInput placeholder="Email" formControlName="login" required>
+          <input matInput placeholder="login" formControlName="login" required>
         </mat-form-field>
+        <mat-error *ngIf="validateControl('login','required')">
+          Login is required
+        </mat-error>
         <mat-form-field class="w-100">
           <input matInput type="password" placeholder="Password" formControlName="password" required>
         </mat-form-field>
+        <mat-error *ngIf="validateControl('password','required')">
+          Password is required
+        </mat-error>
         <button mat-raised-button color="primary" (click)="login()">Login</button>
       </form>
     </mat-card-content>

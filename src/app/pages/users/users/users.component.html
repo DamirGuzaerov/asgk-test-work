@@ -1,1 +1,47 @@
-<p>users works!</p>
+<mat-form-field class="w-100">
+  <input matInput (keyup)="applyFilter($event.target)" placeholder="Search">
+</mat-form-field>
+<mat-table [dataSource]='dataSource' matSort>
+  <ng-container matColumnDef="last_name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Last Name</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.last_name}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="first_name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> First Name</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.first_name}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="pat_name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Pat Name</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.pat_name}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="gender">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Gender</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.gender}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="phone">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Phone</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.phone}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Email</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="birthday">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Birthday</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.birthday}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="date_last">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Date last</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.date_last}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="template">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Template</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.template}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="loyalty_level">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Loyalty Level</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.loyalty_level}} </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+  <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
+</mat-table>

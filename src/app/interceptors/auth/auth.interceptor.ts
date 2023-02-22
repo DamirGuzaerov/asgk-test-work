@@ -6,7 +6,7 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from "../../services/auth/auth.service";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -21,11 +21,10 @@ export class AuthInterceptor implements HttpInterceptor {
     console.log(this.authService.token)
     const headers =
       this.authService.token
-        ? request.headers.set('Authorization', `Bearer ${this.authService.token}`)
+        ? request.headers.set('Authorization', `${this.authService.token}`)
         : request.headers;
 
     console.log(headers)
-
 
     return request.clone({
       headers,

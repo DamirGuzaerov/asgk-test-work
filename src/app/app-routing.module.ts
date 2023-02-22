@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./pages/login/login.component";
 import {AuthGuard} from "./guards/auth/auth.guard";
 import {UsersComponent} from "./pages/users/users/users.component";
+import {NotFoundComponent} from "./pages/not-found/not-found.component";
 
 const routes: Routes = [
   {
@@ -11,9 +12,13 @@ const routes: Routes = [
   },
   {
     path: '',
-    pathMatch:'full',
+    pathMatch:"full",
     canActivate: [AuthGuard],
     component: UsersComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 

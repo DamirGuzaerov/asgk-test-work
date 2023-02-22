@@ -24,12 +24,15 @@ import {ApiInterceptor} from "./interceptors/api/api.interceptor";
 import {AuthInterceptor} from "./interceptors/auth/auth.interceptor";
 import {AuthGuard} from "./guards/auth/auth.guard";
 import { UsersComponent } from './pages/users/users/users.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import {MatSortModule} from "@angular/material/sort";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UsersComponent
+    UsersComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import { UsersComponent } from './pages/users/users/users.component';
     MatOptionModule,
     MatProgressSpinnerModule,
     HttpClientModule,
+    MatSortModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
